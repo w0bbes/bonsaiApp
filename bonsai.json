@@ -1,0 +1,14 @@
+{
+	"name":"ficus",
+	"details":{
+		"type":"indoor",
+		"image":"ficus.jpg",
+		"family":"Iepen"
+	},
+	"name":"Ulmus",
+	"details":{
+		"type":"indoor",
+		"image":"ficus.jpg",
+		"family":"Iepen"
+	}
+}
