@@ -1,25 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>TV Show Premieres</title>
+	<title>The bonsai</title>
 	<!-- INCLUDE REQUIRED THIRD PARTY LIBRARY JAVASCRIPT AND CSS -->
-	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.0.3/angular-resource.min.js"></script>
+    <script src="https://code.angularjs.org/1.2.9/angular-route.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
 
 	<!-- INCLUDE APPLICATION SPECIFIC CSS AND JAVASCRIPT -->
+	<script type="text/javascript" src="js/bonsai-app/services/bonsaiService.js"></script>
 	<script type="text/javascript" src="js/bonsai-app/app.js"></script>
 	<script type="text/javascript" src="js/bonsai-app/controllers/mainController.js"></script>
+	<script type="text/javascript" src="js/bonsai-app/controllers/detailsController.js"></script>
+
+	
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class='banner'>
         <div class='container'>
-            <h1>the Bonsai</h1>
+            <h1>Titel</h1>
         </div>
     </div>
 	<div class="container main-frame" ng-app="bonsaiApp" ng-controller="mainController" ng-init="init()">
-		
+		<h2>{{name}}</h2>
+		<div ng-repeat="details in detail">
+			{{details.family}}
+		</div>
 	</div>
 </body>
 </html>
