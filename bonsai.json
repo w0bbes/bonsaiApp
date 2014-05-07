@@ -1,20 +1,19 @@
 {
-    "id": "1",
-    "name": "ficus",
-    "details": [{
-        "type": "indoor"
-    }, {
-        "image": "ficus.jpg"
-    }, {
-        "family": "Iepen"
-    }],
-    "id": "2",
-    "name": "ficus ginseng",
-    "details": [{
-        "type": "indoor"
-    }, {
-        "image": "ficus.jpg"
-    }, {
-        "family": "Iepen"
-    }]
+    "bomen":
+    [
+        {
+            "id":"1",
+            "name": "Ficus benghalensis",
+            "details":{
+                "family":"Moraceae"
+            }
+        },
+        {
+            "id":"2",
+            "name":"Ficus benjamina",
+            "details":{
+                "family":"Moraceae"
+            }
+        }
+    ]
 }
