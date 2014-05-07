@@ -7,8 +7,6 @@ Listing and show all the bonsais with images and specs
 
 TODO:
 
-	Add trees to bonsai.json
-
-	Create service json feed
+	REST api in NodeJS
 
 	Sorting/filtering/searching on name, type, family
