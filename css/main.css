@@ -1,0 +1,8 @@
+ul.overview{
+	list-style: none;
+}
+
+ul.overview li{
+	margin: 10px;
+}
+

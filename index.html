@@ -2,11 +2,14 @@
 <html>
 <head>
 	<title>The bonsai</title>
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
-    <script src="http://code.angularjs.org/1.0.3/angular-resource.min.js"></script>
+	<script src="https://code.angularjs.org/1.2.9/angular.js"></script>
+    <script src="https://code.angularjs.org/1.2.9/angular-resource.min.js"></script>
     <script src="https://code.angularjs.org/1.2.9/angular-route.js"></script>
+    <script src="https://code.angularjs.org/1.2.9/angular-sanitize.js"></script>
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" href="css/main.css">
 
 	<script type="text/javascript" src="js/bonsai-app/services/bonsaiService.js"></script>
 	<script type="text/javascript" src="js/bonsai-app/app.js"></script>
@@ -18,21 +21,7 @@
 </head>
 <body>
 	<div class="container main-frame" ng-app="bonsaiApp" ng-controller="mainController" ng-init="init()">
-	<ul class="overview">
-		<li ng-repeat="tree in trees">
-			<div class="row-fluid">
-				<div class="span3">
-					<img src="http://www.placehold.it/400x300">
-				</div>
-				<div class="span6">
-					<h2>{{tree.name}}</h2>
-				</div>
-				<div class="span2">
-				<strong>Family:</strong> <span class="">{{tree.details.family}}</span>
-				</div>
-			</div>
-		</li>
-	</ul>
+		<div ng-view></div>
 	</div>
 </body>
 </html>
