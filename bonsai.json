@@ -1,19 +1,15 @@
 {
-    "bomen":
-    [
-        {
-            "id":"1",
-            "name": "Ficus benghalensis",
-            "details":{
-                "family":"Moraceae"
-            }
-        },
-        {
-            "id":"2",
-            "name":"Ficus benjamina",
-            "details":{
-                "family":"Moraceae"
-            }
+    "bomen": [{
+        "id": "1",
+        "name": "Ficus benghalensis",
+        "details": {
+            "family": "Moraceae"
         }
-    ]
+    }, {
+        "id": "2",
+        "name": "Fir",
+        "details": {
+            "family": "Pinaceae"
+        }
+    }]
 }

@@ -4,8 +4,7 @@ app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
         when('/bonsai', {
-            templateUrl: 'partials/bonsai-list.html',
-            controller: 'mainController'
+            templateUrl: 'partials/bonsai-list.html'
         }).
         when('/bonsai/:bonsaiId', {
             templateUrl: 'partials/bonsai-details.html',

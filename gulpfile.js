@@ -7,33 +7,42 @@ var rename = require('gulp-rename');
 var livereload = require('gulp-livereload');
 
 var pathsJs = [
-	'js/bonsai-app/*.js',
-	'js/bonsai-app/controllers/*.js',
-	'js/bonsai-app/services/*.js',
-	'bonsai.json'
+    'js/bonsai-app/*.js',
+    'js/bonsai-app/controllers/*.js',
+    'js/bonsai-app/services/*.js',
+    'bonsai.json'
 ];
 
+var htmls = [
+    'index.html',
+    'partials/*.html'
+]
+
 // lints
-gulp.task('lint',function(){
-	return gulp.src(pathsJs)
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'));
+gulp.task('lint', function() {
+    return gulp.src(pathsJs)
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'));
 });
 
 //minify js
-gulp.task('scripts',function(){
-	return gulp.src(pathsJs)
-		.pipe(livereload());
+gulp.task('scripts', function() {
+    return gulp.src(pathsJs)
+        .pipe(livereload());
 });
 
 // watch index.html without lint...
-gulp.task('html',function(){
-	return gulp.src('*.html')
-		.pipe(livereload());
+gulp.task('html', function() {
+    return gulp.src(htmls)
+        .pipe(livereload());
 });
 
-gulp.task('watch',function(){
-	gulp.watch(pathsJs,['lint','scripts','html']);
+gulp.task('watchHTML', function() {
+    gulp.watch(htmls, ['html']);
 });
 
-gulp.task('default',['watch']);
+gulp.task('watch', function() {
+    gulp.watch(pathsJs, ['lint', 'scripts', 'html']);
+});
+
+gulp.task('default', ['watch', 'watchHTML']);

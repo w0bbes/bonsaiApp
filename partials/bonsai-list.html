@@ -1,11 +1,18 @@
+<label>Filter</label>
+<input type="text" ng-model="filterText"/>
+<label>Family</label>
+<select ng-model="familyFilter" ng-options="label for label in availableFamilies">
+	<option value="">Allqwe</option>
+</select>
 <ul class="overview">
-	<li ng-repeat="tree in trees">
+	<li ng-repeat="tree in trees | filter:filterText">
 		<div class="row-fluid">
 			<div class="span3">
 				<img src="http://www.placehold.it/400x300">
 			</div>
 			<div class="span6">
-				<h2>{{tree.name}}</h2>
+				<strong>{{tree.name}}</strong>
+				<button>Details</button>
 			</div>
 			<div class="span2">
 			<strong>Family:</strong> <span class="">{{tree.details.family}}</span>
@@ -13,3 +20,4 @@
 		</div>
 	</li>
 </ul>
+<div ng-show="(trees | filter:filterText).length == 0">No results, try a different term</div>
