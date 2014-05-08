@@ -2,7 +2,7 @@
 <input type="text" ng-model="filterText"/>
 <label>Family</label>
 <select ng-model="familyFilter" ng-options="label for label in availableFamilies">
-	<option value="">Allqwe</option>
+	<option value="">All</option>
 </select>
 <ul class="overview">
 	<li ng-repeat="tree in trees | filter:filterText">
