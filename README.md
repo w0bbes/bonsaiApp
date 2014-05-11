@@ -1,12 +1,19 @@
 bonsaiApp
 =========
 
-BonsaiApp 
 
-Listing and show all the bonsais with images and specs
 
-TODO:
+The BonsaiApp
 
-	REST api in NodeJS
 
-	Sorting/filtering/searching on name, type, family
+The Bonsai is an effort to list and show all bonsai types in the world and giving the community a place to post pictures, make comments and discuss trees.
+
+At the least this project should contain a overview of all trees with sorting and ordering options.
+
+The details pages will contain detailed information about the tree and a community section where you can post and upload images, make comments and discuss stuff like growing patterns, feeding and supplies.
+
+Technique
+
+AngularJS/NodeJS/Express/MongoDB
+
+
