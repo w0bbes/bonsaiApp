@@ -30,6 +30,7 @@ router.use(function(req,res,next){
 router.route('/bonsais')
 	.post(function(req,res){
 		var bonsai = new Bonsai();
+
 		bonsai.name = req.body.name;
 
 		bonsai.save(function(err){
@@ -49,6 +50,15 @@ router.route('/bonsais')
 			res.json(bonsai)
 		})
 	})
+
+router.route('/bonsais/:bonsai_id')
+	.get(function(req,res){
+			Bonsai.findById(req.params.bonsai_id,function(err,bonsai){
+				if(err)
+					res.send(err);
+				res.json(bonsai)
+			})
+		})
 
 
 

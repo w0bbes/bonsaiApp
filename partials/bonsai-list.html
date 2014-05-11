@@ -1,21 +1,48 @@
-<label>Filter</label>
-<input type="text" ng-model="filterText"/>
-<label>Family</label>
-<select ng-model="familyFilter" ng-options="label for label in availableFamilies">
-	<option value="">All</option>
-</select>
-<ul class="overview">
-	<li ng-repeat="tree in trees | filter:filterText">
-		<div class="row-fluid">
-			<div class="span3">
-				<img src="http://www.placehold.it/400x300">
+<div class="row">
+	<div class="col-md-4">
+		<label>Serach</label>
+		<input type="text" class="form-control" placeholder="search" ng-model="filterText"/>
+	</div>
+	<div class="col-md-4">
+		<label>Family</label>
+		<select class="form-control" ng-model="familyFilter" ng-options="label for label in availableFamilies">
+			<option value="">All</option>
+		</select>
+	</div>
+	<div class="col-md-4">
+		<label>Grid/List</label>
+		<button class="btn btn-default" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'">Grid</button>
+		<button class="btn btn-default" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">List</button>
+	</div>
+</div>
+
+
+
+<div class="overview grid" ng-show="layout == 'grid'">
+	<div class="row">
+		<div class="col-md-4" ng-repeat="tree in trees | filter:filterText | filter:familyFilter">
+			<img class="img-responsive" src="http://www.placehold.it/400x300">
+			<strong>{{tree.name}}</strong>
+			 <br>
+			<button>Details</button>
+			<strong>Family:</strong><span class="">{{tree.details.family}}</span>
+		</div>
+	</div>
+</div>
+
+<ul class="overview list" ng-show="layout == 'list'">
+	<li ng-repeat="tree in trees | filter:filterText | filter:familyFilter">
+		<div class="row">
+			<div class="col-md-3">
+				<img class="img-responsive" src="http://www.placehold.it/400x300">
 			</div>
-			<div class="span6">
+			<div class="col-md-6">
 				<strong>{{tree.name}}</strong>
+				 <br>
 				<button>Details</button>
 			</div>
-			<div class="span2">
-			<strong>Family:</strong> <span class="">{{tree.details.family}}</span>
+			<div class="col-md-3">
+			<strong>Family:</strong><span class="">{{tree.details.family}}</span>
 			</div>
 		</div>
 	</li>

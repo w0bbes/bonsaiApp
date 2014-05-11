@@ -3,7 +3,8 @@ app.controller("mainController", function($scope, $http, bonsaiService) {
     $scope.filterText = null;
     $scope.availableFamilies = [];
     $scope.familyFilter = null;
-
+    $scope.layout = 'grid';
+    
     $scope.init = function() {
 
         bonsaiService.get(function(data) {
