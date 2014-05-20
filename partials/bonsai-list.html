@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-4">
-		<label>Serach</label>
+		<label>Search</label>
 		<input type="text" class="form-control" placeholder="search" ng-model="filterText"/>
 	</div>
 	<div class="col-md-4">
@@ -24,8 +24,10 @@
 			<img class="img-responsive" src="http://www.placehold.it/400x300">
 			<strong>{{tree.name}}</strong>
 			 <br>
-			<button>Details</button>
 			<strong>Family:</strong><span class="">{{tree.details.family}}</span>
+			<a href="#/bonsai/{{tree.id}}">
+				<button>Details</button>
+			</a>
 		</div>
 	</div>
 </div>
@@ -39,7 +41,9 @@
 			<div class="col-md-6">
 				<strong>{{tree.name}}</strong>
 				 <br>
-				<button>Details</button>
+				 <a href="#/bonsai/{{tree.id}}">
+					<button>Details</button>
+				</a>
 			</div>
 			<div class="col-md-3">
 			<strong>Family:</strong><span class="">{{tree.details.family}}</span>
