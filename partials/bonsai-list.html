@@ -1,27 +1,35 @@
 <div class="row">
-	<div class="col-md-4">
-		<label>Search</label>
-		<input type="text" class="form-control" placeholder="search" ng-model="filterText"/>
+	<div class="col-md-6">
+		<form class="form-inline">
+			<div class="form-group">
+				<label for="filtertext">Search</label>
+				<input type="text" id="filtertext" class="form-control input-sm" placeholder="search" ng-model="filterText"/>
+			</div>
+			<div class="form-group">
+				<label for="familyfilter">Family</label>
+				<select class="form-control input-sm" id="familyfilter" ng-model="familyFilter" ng-options="label for label in availableFamilies">
+					<option value="">All</option>
+				</select>
+			</div>
+		</form>
 	</div>
-	<div class="col-md-4">
-		<label>Family</label>
-		<select class="form-control" ng-model="familyFilter" ng-options="label for label in availableFamilies">
-			<option value="">All</option>
-		</select>
-	</div>
-	<div class="col-md-4">
-		<label>Grid/List</label>
-		<button class="btn btn-default" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'">Grid</button>
-		<button class="btn btn-default" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">List</button>
+	<div class="col-md-6">
+		<div class="pull-right">
+			<label>Grid/List</label>
+			<button class="btn btn-default input-sm" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'">Grid</button>
+			<button class="btn btn-default input-sm" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'">List</button>
+		</div>
 	</div>
 </div>
-
-
-
+<div class="row">
+	<div class="col-md-12">
+		<a href="register">Register</a>
+	</div>
+</div>
 <div class="overview grid" ng-show="layout == 'grid'">
 	<div class="row">
 		<div class="col-md-4" ng-repeat="tree in trees | filter:filterText | filter:familyFilter">
-			<img class="img-responsive" src="http://www.placehold.it/400x300">
+			<img class="img-responsive" ng-src="img/bonsai.jpg">
 			<strong>{{tree.name}}</strong>
 			 <br>
 			<strong>Family:</strong><span class="">{{tree.details.family}}</span>
@@ -36,7 +44,7 @@
 	<li ng-repeat="tree in trees | filter:filterText | filter:familyFilter">
 		<div class="row">
 			<div class="col-md-3">
-				<img class="img-responsive" src="http://www.placehold.it/400x300">
+				<img class="img-responsive" ng-src="img/bonsai.jpg">
 			</div>
 			<div class="col-md-6">
 				<strong>{{tree.name}}</strong>

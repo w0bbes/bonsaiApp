@@ -1,8 +1,13 @@
 ul.overview{
 	list-style: none;
+	margin:0;
+	padding:0;
 }
 
 ul.overview li{
-	margin: 10px;
+	margin: 10px 0 10px 0;
 }
 
+.row{
+    margin-bottom:1%;
+}

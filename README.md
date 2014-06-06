@@ -16,4 +16,11 @@ Technique
 
 AngularJS/NodeJS/Express/MongoDB
 
+Todo
+
+- Lijst bomen voor bonsai http://www.bonsaiempire.nl/boomsoorten/lijst-boomsoorten
+- Image missing? Click here to upload one.
+- Register form
+- Authenticate user (middleware ExpressJS)
+
 
