@@ -16,13 +16,16 @@ app.use(bodyParser());
 var port = process.env.PORT || 8888;
 
 // routes
-
-
 var router = express.Router();
 
-// middleware
 
+
+// middleware
 router.use(function(req,res,next){
+	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+	res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE,OPTIONS');
+	res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+	res.setHeader('Access-Control-Allow-Credentials', true);
 	console.log('Iets...');
 	next();
 })
@@ -43,6 +46,7 @@ router.route('/bonsais')
 
 	})
 	.get(function(req,res){
+
 		Bonsai.find(function(err,bonsai){
 			if(err)
 				res.send(err)
@@ -60,10 +64,7 @@ router.route('/bonsais/:bonsai_id')
 			})
 		})
 
-
-
 router.get('/',function(req, res){
-
 	res.json({message: 'dikke test!'});
 
 });

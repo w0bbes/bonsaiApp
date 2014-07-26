@@ -7,9 +7,20 @@ app.controller("mainController", function($scope, $http, bonsaiService) {
     
     $scope.init = function() {
 
+
+bonsaiService.get($scope.trees).then(
+    function(data){
+        $scope.trees = data;
+});
+
+/*
+        bonsaiService.get(function(data){
+            $scope.trees = data.name;
+        });
+
         bonsaiService.get(function(data) {
 
-            $scope.trees = data.bomen;
+            $scope.trees = data.name;
 
             angular.forEach($scope.trees, function(val, index) {
 
@@ -32,6 +43,7 @@ app.controller("mainController", function($scope, $http, bonsaiService) {
                 });
             });
         });
+*/
     };
 
 });
