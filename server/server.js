@@ -24,7 +24,7 @@ var router = express.Router();
 router.use(function(req,res,next){
 	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
 	res.setHeader('Access-Control-Allow-Methods', 'POST,GET,PUT,DELETE,OPTIONS');
-	res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+	res.setHeader("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
 	res.setHeader('Access-Control-Allow-Credentials', true);
 	console.log('Iets...');
 	next();
